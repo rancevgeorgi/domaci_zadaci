@@ -1,0 +1,25 @@
+section div{
+    float: left;
+}
+section{
+    overflow: hidden;
+}
+.pizza {
+    text-align: center;
+    width: 33.33%;
+}
+.oil{
+    text-align: center;
+    width: 33.33%;
+}
+.pasta{
+    text-align: center;
+    width: 33.33%;
+}
+.pizza p{
+   width: 250px;
+   padding-left: 80px;
+}
+
+
+
