@@ -14,9 +14,9 @@
         {
             $zbir = $zbir + $n;  
         }
-        $n++;
-        $k = $p - $zbir;
+        $n++; 
     }
+    $k = $p - $zbir;
     echo "<p>prizvod brojeva je $p</p>";
     echo "<p>proizvod minus zbir je $k</p>";
 
@@ -35,8 +35,8 @@
         {
             $zbir = $zbir + $i;  
         }
-        $k = $p - $zbir;
     }
+    $k = $p - $zbir;
     echo "<p>prizvod brojeva je $p</p>";
     echo "<p>proizvod minus zbir je $k</p>";
 
