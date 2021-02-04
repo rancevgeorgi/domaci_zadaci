@@ -27,6 +27,6 @@ SELECT reziser FROM filmovi ORDER BY ocena DESC LIMIT 3;
 SELECT DISTINCT zanr FROM filmovi;
 SELECT naslov, reziser AS "(reziser)" FROM filmovi;
 SELECT naslov, reziser AS "(reziser)", god_izdavanja FROM filmovi ORDER BY god_izdavanja ASC;
-SELECT AVG(ocena) AS "Prosek ocena posle 1990. godine" FROM filmovi WHERE god_izdavanja > 1990;
+SELECT AVG(ocena) AS "Prosek ocena posle 2000. godine" FROM filmovi WHERE god_izdavanja > 2000;
 
 
