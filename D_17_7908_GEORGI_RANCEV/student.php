@@ -1,5 +1,4 @@
 <?php
-//NISAM USPEO DA ZAVRŠIM ZADATAK DO 18h
 
 abstract class Student{
     protected $ime;
@@ -54,8 +53,9 @@ abstract class Student{
         echo "<ul>
                 <li> Ime studenta: {$this->getIme()}</li>
                 <li>Osvojeni ESPB poeni: {$this->getOsvojeniESPB()}</li>
-                <li>Prosečna ocena: {$this->getProsek()} god.</li>
-                <li>Skolarina: {$this->skolarina(rand(35, 60))} god.</li>
+                <li>Prosečna ocena: {$this->getProsek()}</li>
+                <li>Skolarina: {$this->skolarina($this->getEspb())} RSD</li>
+                <li>Prijavljeni ESPB: {$this->getEspb()}</li>
             </ul>";
     }
 
