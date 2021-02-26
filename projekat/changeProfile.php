@@ -8,8 +8,8 @@
    
         $id = $_SESSION['id']; 
 
-        $name = $surname = $gender = $date = "";
-        $nameErr = $surnameErr = $dateErr = "";
+        $name = $surname = $gender = $date = $bio = "";
+        $nameErr = $surnameErr = $dateErr = $bioErr = "";
         $prikazi = true;
         
 
@@ -21,12 +21,14 @@
         $surname = $red['surname'];
         $gender = $red['gender'];
         $date = $red['dob'];
+        $bio = $red['bio'];
         
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $name = $_POST['name'];
             $surname = $_POST['surname'];
             $gender = $_POST['gender'];
             $date = $_POST['date'];
+            $bio = $red['bio'];
            
             // name validation
             if (empty($_POST["name"])) {
@@ -61,6 +63,14 @@
             } else {
                 $date = $conn->real_escape_string($_POST["date"]);
             }
+
+            // bio validation NE RADI
+            if (empty($_POST["bio"])) {
+                $prikazi = false;
+                $bioErr = "morate uneti biografiju";
+            }  else {
+                $bio = $conn->real_escape_string($_POST["bio"]);
+            }
         }
       
 
@@ -93,6 +103,11 @@
                         <input class="form-control" type="date" name="date"  value="<?php echo $date ?>" >
                         <span class="text-danger"> <?php echo $dateErr; ?></span>
                     </div>
+                    <div class="form-group"> 
+                        <label> Biografija:</label>
+                        <textarea class="form-control" name="bio" id="" cols="30" rows="10" value="<?php echo $bio ?>">  </textarea>
+                        <span class="text-danger">* <?php echo $bioErr; ?></span>
+                    </div>
                     <input class="btn btn-primary" type="submit" name="update" value="accept changes">
                 </div>    
                 <div class="col-sm-4">
@@ -105,7 +120,7 @@
                         echo "<p>Datum: ". $date . "</p>"; */
                             if (isset($_POST['update'])) {
                                 $q = "UPDATE profiles
-                                SET name = '$name', surname = '$surname', gender = '$gender', dob = '$date'
+                                SET name = '$name', surname = '$surname', gender = '$gender', dob = '$date', bio = '$bio'
                                 WHERE user_id = $id;";
                                 if($conn->query($q)) {
                                     echo "<p class='text-success'>Successfully update</p>";

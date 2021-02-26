@@ -92,7 +92,8 @@
                     foreach ($result as $row) {
                         echo "<tbody>";
                         echo "<tr>";
-                        echo " <td>" . $row['name'] . "</td>";
+                        //treba user_id?
+                        echo " <td> <a href='profiles.php?id=$id'>"  . $row['name'] . "</a> </td>";
                         echo "  <td>" . $row['surname'] . "</td>";
                         echo "  <td>" . $row['username'] . "</td>";
                         $friendId = $row['id'];
