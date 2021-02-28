@@ -90,10 +90,11 @@
                     </tr>
                     </thead>";
                     foreach ($result as $row) {
+                        $userId = $row['id'];
                         echo "<tbody>";
                         echo "<tr>";
                         //treba user_id?
-                        echo " <td> <a href='profiles.php?id=$id'>"  . $row['name'] . "</a> </td>";
+                        echo " <td> <a href='profile.php?id=$userId'>"  . $row['name'] . "</a> </td>";
                         echo "  <td>" . $row['surname'] . "</td>";
                         echo "  <td>" . $row['username'] . "</td>";
                         $friendId = $row['id'];

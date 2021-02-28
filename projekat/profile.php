@@ -6,6 +6,7 @@
         $userName = $_SESSION['name'];
         $userSurname = $_SESSION['surname'];
     }
+    $idUser = $_GET['id'];
 
     echo "<h2 class='text-center bg-primary text-white'>Hello, " . $userName . " " . $userSurname . "</h2>";
     
@@ -19,7 +20,7 @@
           FROM profiles
           INNER JOIN users
           ON profiles.user_id = users.id
-          WHERE profiles.user_id = $id;";
+          WHERE profiles.user_id = $idUser;";
     $result = $conn->query($q);
 
     ?>
