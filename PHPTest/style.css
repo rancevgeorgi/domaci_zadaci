@@ -1,0 +1,17 @@
+ul li{
+    list-style-type: none;
+    width: 200px;
+    background-color: rgb(74, 74, 104);
+    text-align: center;
+    margin: 1px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+}
+ul li:hover{
+    background-color: red;
+}
+ul li a{
+    color: white;
+    text-decoration: none;
+}

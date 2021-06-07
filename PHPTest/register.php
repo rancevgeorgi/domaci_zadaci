@@ -32,8 +32,7 @@
             else {
                 $email = $conn->real_escape_string($_POST["email"]);
             }
-
-       
+      
             // password validation
             if (empty($_POST["pass"])) {
                 $show = false;
@@ -93,7 +92,7 @@
             <span class="error">* <?php echo $retypePassErr; ?></span>
         </p>
         <p>
-            <input type="submit" value="Submit">
+            <input type="submit" name="submit" value="Submit">
         </p>
     </form>
 
